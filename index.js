@@ -9,8 +9,8 @@ const main = async () => {
   const runs = await getRunningData()
   await fs.mkdirp(fromCurrentDir('./dist'))
   await Promise.all([
-    createRunsCsv(fromCurrentDir('./dist/athletes.csv'), runs),
-    createAthletesCsv(fromCurrentDir('./dist/runs.csv'), runs),
+    createRunsCsv(fromCurrentDir('./dist/runs.csv'), runs),
+    createAthletesCsv(fromCurrentDir('./dist/athletes.csv'), runs),
   ])
 }
 
