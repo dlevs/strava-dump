@@ -10,7 +10,9 @@ const main = async () => {
   await fs.mkdirp(fromCurrentDir('./dist'))
   await Promise.all([
     createRunsCsv(fromCurrentDir('./dist/runs.csv'), runs),
-    createAthletesCsv(fromCurrentDir('./dist/athletes.csv'), runs),
+    createAthletesCsv(fromCurrentDir('./dist/athletesAll.csv'), runs),
+    createAthletesCsv(fromCurrentDir('./dist/athletes4k.csv'), runs.filter(({ distance }) => distance >= 4000 )),
+    createAthletesCsv(fromCurrentDir('./dist/athletes5k.csv'), runs.filter(({ distance }) => distance >= 5000 )),
   ])
 }
 
